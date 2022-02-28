@@ -51,7 +51,7 @@
             this.newButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.changeLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.changeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -116,11 +116,12 @@
             // receiptOutput
             // 
             this.receiptOutput.BackColor = System.Drawing.SystemColors.Menu;
-            this.receiptOutput.Font = new System.Drawing.Font("Microsoft Uighur", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receiptOutput.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.receiptOutput.Location = new System.Drawing.Point(490, 52);
             this.receiptOutput.Name = "receiptOutput";
             this.receiptOutput.Size = new System.Drawing.Size(336, 350);
             this.receiptOutput.TabIndex = 6;
+            this.receiptOutput.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // burgersLabel
             // 
@@ -256,6 +257,7 @@
             this.newButton.TabIndex = 20;
             this.newButton.Text = "New Order";
             this.newButton.UseVisualStyleBackColor = true;
+            this.newButton.Click += new System.EventHandler(this.newButton_Click);
             // 
             // label1
             // 
@@ -276,16 +278,16 @@
             this.changeLabel.Size = new System.Drawing.Size(104, 25);
             this.changeLabel.TabIndex = 22;
             // 
-            // button1
+            // changeButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(443, 513);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(264, 34);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Calculate Change";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.changeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeButton.Location = new System.Drawing.Point(443, 513);
+            this.changeButton.Name = "changeButton";
+            this.changeButton.Size = new System.Drawing.Size(264, 34);
+            this.changeButton.TabIndex = 23;
+            this.changeButton.Text = "Calculate Change";
+            this.changeButton.UseVisualStyleBackColor = true;
+            this.changeButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -293,7 +295,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(874, 556);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.changeButton);
             this.Controls.Add(this.changeLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.newButton);
@@ -349,7 +351,7 @@
         private System.Windows.Forms.Button newButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label changeLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button changeButton;
     }
 }
 

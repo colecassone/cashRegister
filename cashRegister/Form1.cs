@@ -46,7 +46,9 @@ namespace cashRegister
 
         double changeTotal = 0;
 
-        double subTotal = 0; 
+        double subTotal = 0;
+
+        double orderNumber = 1; 
 
         public Form1()
         {
@@ -65,7 +67,7 @@ namespace cashRegister
                 nomBurgers = Convert.ToDouble(burgesInput.Text);
                 nomFries = Convert.ToDouble(friesInput.Text);
                 nomDrinks = Convert.ToDouble(drinksInput.Text);
-                tendered = Convert.ToDouble(tenderedInput.Text);
+               
 
                 totalBurgers = payBurgers * nomBurgers;
 
@@ -79,7 +81,7 @@ namespace cashRegister
 
                 total = subTotal * tax1;
 
-                changeTotal = tendered - total;
+               
 
 
                 subInput.Text = $"{subTotal.ToString("C")}";
@@ -100,12 +102,57 @@ namespace cashRegister
 
         private void printButton_Click(object sender, EventArgs e)
         {
-            
+            receiptOutput.TextAlign = ContentAlignment.TopLeft;
+            receiptOutput.Text = $"          Burger Town Pub";
+            receiptOutput.Text += $"\nOrder Number {orderNumber}";
+
+            receiptOutput.Text += $"\nBurgers   x{nomBurgers} @ {payBurgers.ToString("C")}";
+            receiptOutput.Text += $"\nFries     x{nomFries} @ {payFries.ToString("C")}";
+            receiptOutput.Text += $"\nDrinks    x{nomDrinks} @ {payDrinks.ToString("C")}";
+            receiptOutput.Text += $"\n\nSub Total   = {subTotal.ToString("C")}";
+            receiptOutput.Text += $"\nTax          = {taxD.ToString("C")}";
+            receiptOutput.Text += $"\nTotal        = {total.ToString("C")}";
+
+
+
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            tendered = Convert.ToDouble(tenderedInput.Text);
+            changeTotal = tendered - total;
             changeLabel.Text = $"{changeTotal.ToString("C")}";
+
+            
+        }
+
+        private void newButton_Click(object sender, EventArgs e)
+        {
+            changeLabel.Text = $""; 
+            receiptOutput.Text = $"";
+            subInput.Text = $"";
+            taxInput.Text = $"";
+            totalInput.Text = $"";
+            burgesInput.Text = $"0";
+            drinksInput.Text = $"0";
+            friesInput.Text = $"0";
+            tenderedInput.Text = $"0";
+            orderNumber = orderNumber + 1;
+            totalBurgers = 0;
+            totalFries = 0;
+            totalDrink = 0;
+            nomBurgers = 0;
+            nomFries = 0;
+            nomDrinks = 0; 
+            tendered = 0;
+            total = 0;
+            taxD = 0;
+            subTotal = 0;
+            changeTotal = 0;
+
+
         }
     }
 }
