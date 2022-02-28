@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Media;
+
 using System.Windows.Forms;
 
 namespace cashRegister
@@ -130,6 +132,7 @@ namespace cashRegister
 
         private void newButton_Click(object sender, EventArgs e)
         {
+            //SoundPlayer newButtonSound = new soundPlayer(Proper)
             changeLabel.Text = $""; 
             receiptOutput.Text = $"";
             subInput.Text = $"";

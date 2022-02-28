@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.nameLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.burgesInput = new System.Windows.Forms.TextBox();
@@ -319,6 +320,7 @@
             this.Controls.Add(this.burgesInput);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Calculate Change ";
             this.ResumeLayout(false);
