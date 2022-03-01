@@ -66,6 +66,8 @@ namespace cashRegister
         {
             try
             {
+                 SoundPlayer totalSound = new SoundPlayer(Properties.Resources.totalSound);
+                totalSound.Play(); 
                 nomBurgers = Convert.ToDouble(burgesInput.Text);
                 nomFries = Convert.ToDouble(friesInput.Text);
                 nomDrinks = Convert.ToDouble(drinksInput.Text);
@@ -97,6 +99,9 @@ namespace cashRegister
             }
             catch
             {
+                
+                
+                
                 receiptOutput.Text = $"you dummy"; 
 
             }
@@ -104,18 +109,23 @@ namespace cashRegister
 
         private void printButton_Click(object sender, EventArgs e)
         {
+           SoundPlayer cashSound = new SoundPlayer(Properties.Resources.cashSound);
+            cashSound.Play(); 
             receiptOutput.TextAlign = ContentAlignment.TopLeft;
-            receiptOutput.Text = $"          Burger Town Pub";
+            receiptOutput.Text = $"      Burger Town Pub";
             receiptOutput.Text += $"\nOrder Number {orderNumber}";
 
             receiptOutput.Text += $"\nBurgers   x{nomBurgers} @ {payBurgers.ToString("C")}";
+             
             receiptOutput.Text += $"\nFries     x{nomFries} @ {payFries.ToString("C")}";
             receiptOutput.Text += $"\nDrinks    x{nomDrinks} @ {payDrinks.ToString("C")}";
-            receiptOutput.Text += $"\n\nSub Total   = {subTotal.ToString("C")}";
+            receiptOutput.Text += $"\n\nSub Total    = {subTotal.ToString("C")}";
             receiptOutput.Text += $"\nTax          = {taxD.ToString("C")}";
             receiptOutput.Text += $"\nTotal        = {total.ToString("C")}";
-
-
+            receiptOutput.Text += $"\n\nTendered     = {tendered.ToString("C")}";
+            receiptOutput.Text += $"\nTotal Change = {changeTotal.ToString("C")}";
+            receiptOutput.Text += $"\n\nNO RETURN POLICY";
+            receiptOutput.Text += $"\nYOU MUST HAVE A GREAT DAY :|";
 
 
 
@@ -123,16 +133,29 @@ namespace cashRegister
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tendered = Convert.ToDouble(tenderedInput.Text);
-            changeTotal = tendered - total;
-            changeLabel.Text = $"{changeTotal.ToString("C")}";
+            try
+            {
 
+
+                SoundPlayer changeSound = new SoundPlayer(Properties.Resources.changeSound);
+                changeSound.Play();
+
+                tendered = Convert.ToDouble(tenderedInput.Text);
+                changeTotal = tendered - total;
+                changeLabel.Text = $"{changeTotal.ToString("C")}";
+            }
+
+            catch
+            {
+                receiptOutput.Text = $"you dummy";
+            }
             
         }
 
         private void newButton_Click(object sender, EventArgs e)
         {
-            //SoundPlayer newButtonSound = new soundPlayer(Proper)
+            SoundPlayer newButtonSound = new SoundPlayer(Properties.Resources.newButtonSound); 
+            newButtonSound.Play();
             changeLabel.Text = $""; 
             receiptOutput.Text = $"";
             subInput.Text = $"";

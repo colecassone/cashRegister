@@ -120,7 +120,7 @@
             this.receiptOutput.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.receiptOutput.Location = new System.Drawing.Point(490, 52);
             this.receiptOutput.Name = "receiptOutput";
-            this.receiptOutput.Size = new System.Drawing.Size(336, 350);
+            this.receiptOutput.Size = new System.Drawing.Size(336, 399);
             this.receiptOutput.TabIndex = 6;
             this.receiptOutput.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -223,7 +223,7 @@
             // printButton
             // 
             this.printButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.printButton.Location = new System.Drawing.Point(553, 413);
+            this.printButton.Location = new System.Drawing.Point(555, 456);
             this.printButton.Name = "printButton";
             this.printButton.Size = new System.Drawing.Size(222, 51);
             this.printButton.TabIndex = 17;

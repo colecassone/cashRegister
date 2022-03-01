@@ -83,5 +83,14 @@
   <ItemGroup>
     <None Include="Resources\333489__robinhood76__06276-cash-bonus.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\202531__kalisemorrison__cash-drawer-and-receipt.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\613691__melokacool__scary-school-bell.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\488227__plumaudio__happy-blip.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
