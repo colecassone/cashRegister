@@ -281,6 +281,7 @@
             // 
             // changeButton
             // 
+            this.changeButton.Enabled = false;
             this.changeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeButton.Location = new System.Drawing.Point(443, 513);
             this.changeButton.Name = "changeButton";
