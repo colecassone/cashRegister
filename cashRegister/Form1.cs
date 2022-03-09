@@ -15,7 +15,7 @@ namespace cashRegister
 {
     public partial class Form1 : Form
     {
-
+        // prices and value holders 
         double totalBurgers = 0;
         double totalFries = 0;
         double totalDrink = 0;
@@ -53,22 +53,13 @@ namespace cashRegister
                 nomBurgers = Convert.ToDouble(burgesInput.Text);
                 nomFries = Convert.ToDouble(friesInput.Text);
                 nomDrinks = Convert.ToDouble(drinksInput.Text);
-               
-
+       
                 totalBurgers = payBurgers * nomBurgers;
-
                 totalFries = nomFries * payFries;
-
                 totalDrink = nomDrinks * payDrinks;
-
                 subTotal = totalBurgers + totalFries + totalDrink;
-
                 taxTotal = subTotal * tax;
-
                 total = subTotal + taxTotal;
-
-               
-
 
                 subInput.Text = $"{subTotal.ToString("C")}";
                 taxInput.Text = $"{taxTotal.ToString("C")}";
@@ -89,37 +80,53 @@ namespace cashRegister
 
         private void printButton_Click(object sender, EventArgs e)
         {
+            //output putting what is on the recerit
            SoundPlayer cashSound = new SoundPlayer(Properties.Resources.cashSound);
             cashSound.Play(); 
             receiptOutput.TextAlign = ContentAlignment.TopLeft;
-
             receiptOutput.Text = $"      Burger Town Pub";
             receiptOutput.Refresh();
             Thread.Sleep(250);
-
             receiptOutput.Text += $"\nOrder Number {orderNumber}";
             receiptOutput.Refresh();
             Thread.Sleep(250);
-
-
             receiptOutput.Text += $"\nBurgers   x{nomBurgers} @ {payBurgers.ToString("C")}";
-             
+            receiptOutput.Refresh();
+            Thread.Sleep(250);
             receiptOutput.Text += $"\nFries     x{nomFries} @ {payFries.ToString("C")}";
+            receiptOutput.Refresh();
+            Thread.Sleep(250);
             receiptOutput.Text += $"\nDrinks    x{nomDrinks} @ {payDrinks.ToString("C")}";
+            receiptOutput.Refresh();
+            Thread.Sleep(250);
             receiptOutput.Text += $"\n\nSub Total    = {subTotal.ToString("C")}";
+            receiptOutput.Refresh();
+            Thread.Sleep(250);
             receiptOutput.Text += $"\nTax          = {taxTotal.ToString("C")}";
+            receiptOutput.Refresh();
+            Thread.Sleep(250);
             receiptOutput.Text += $"\nTotal        = {total.ToString("C")}";
+            receiptOutput.Refresh();
+            Thread.Sleep(250);
             receiptOutput.Text += $"\n\nTendered     = {tendered.ToString("C")}";
+            receiptOutput.Refresh();
+            Thread.Sleep(250);
             receiptOutput.Text += $"\nTotal Change = {changeTotal.ToString("C")}";
+            receiptOutput.Refresh();
+            Thread.Sleep(250);
             receiptOutput.Text += $"\n\nNO RETURN POLICY";
+            receiptOutput.Refresh();
+            Thread.Sleep(250);
             receiptOutput.Text += $"\nYOU MUST HAVE A GREAT DAY :|";
-
+            receiptOutput.Refresh();
+            Thread.Sleep(250);
 
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // getting the change for the oder
             SoundPlayer changeSound = new SoundPlayer(Properties.Resources.changeSound);
             changeSound.Play();
 
@@ -133,11 +140,13 @@ namespace cashRegister
             {
                 receiptOutput.Text = $"you dummy";
             }
-            
+            printButton.Enabled = true;
         }
 
         private void newButton_Click(object sender, EventArgs e)
         {
+            changeButton.Enabled = false;
+            printButton.Enabled = false;
             SoundPlayer newButtonSound = new SoundPlayer(Properties.Resources.newButtonSound); 
             newButtonSound.Play();
             changeLabel.Text = $""; 
@@ -161,7 +170,6 @@ namespace cashRegister
             taxTotal = 0;
             subTotal = 0;
             changeTotal = 0;
-
 
         }
     }

@@ -222,6 +222,7 @@
             // 
             // printButton
             // 
+            this.printButton.Enabled = false;
             this.printButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.printButton.Location = new System.Drawing.Point(555, 456);
             this.printButton.Name = "printButton";
